@@ -1,11 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
-import StatefulGreetingWithPrevState from './components/StatefulGreetingWithPrevState';
+import ConditionalRenderingClass from './components/ConditionalRenderingClass';
+import ConditionalRenderingFunctional from './components/ConditionalRenderingFunctional';
 
 function App() {
   return (
     <div className="App">
-      <StatefulGreetingWithPrevState greeting="I'm a stateful class component" />
+      <ConditionalRenderingClass />
+      <ConditionalRenderingFunctional connected={false}/>
+
     </div>
   );
 }
