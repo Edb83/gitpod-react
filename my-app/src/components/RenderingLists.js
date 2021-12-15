@@ -30,14 +30,25 @@ export default function RenderingLists() {
     return (
         <div>
             {booklist.map(book => {
-                return <h2>{book}</h2>
+                return <h2 key={book}>{book}</h2>
             })}
             <hr />
+            
             {
                 books.map(book => {
                     return (
-                        <Book book={book} />
+                        <div key={book.title}>
+                            <h5>{book.title}</h5>
+                            <p>{book.author}</p>
+                            <p>{book.pages}</p>
+                        </div>
                     )
+                })
+            }
+            <hr />
+            {
+                books.map(book => {
+                    return <Book key={book.title} book={book} />
                 })
             }
         </div>
