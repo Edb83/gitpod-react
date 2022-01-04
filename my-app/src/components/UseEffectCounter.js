@@ -13,9 +13,16 @@ function UseEffectCounter() {
     useEffect(() => {
         console.log('Creating timer');
         const interval = setInterval(() => {
+            console.log('Interval executed');
             setTime(time => time + 1 )
         }, 1000);
-        // to run setEffect() just once, pass in empty array as 2nd parameter
+
+        // Cleanup mimics componentWillUnmount
+        return () => {
+            console.log('Cleaning up')
+            clearInterval(interval)
+        };
+
     }, [])
 
     return (
